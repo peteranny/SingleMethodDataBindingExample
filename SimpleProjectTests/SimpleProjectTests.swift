@@ -5,32 +5,53 @@
 //  Created by Peter Shih on 2024/2/20.
 //
 
-import XCTest
 @testable import SimpleProject
+import Combine
+import Entwine
+import EntwineTest
+import XCTest
 
-final class SimpleProjectTests: XCTestCase {
+class SimpleProjectTests: XCTestCase {
+  func test_binding() {
+    let scheduler = TestScheduler(initialClock: .zero)
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+    // Create inputs
+    let buttonTap = scheduler.createAbsoluteTestablePublisher(TestSequence<Void, Never>([
+        (1, .input(())), (2, .input(())), (3, .input(())),
+    ])).eraseToAnyPublisher()
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+    // Create output observers
+    let backgroundColorSubscriber = scheduler.createTestableSubscriber(SimpleViewModel.Color.self, Never.self)
+    let buttonTitleSubscriber = scheduler.createTestableSubscriber(String.self, Never.self)
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
+    // Bind the inputs to the view model
+    let viewModel = SimpleViewModel()
+    let inputs = SimpleViewModel.Inputs(
+       buttonTap: buttonTap
+    )
+    let outputs = viewModel.bind(inputs)
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+    // Bind the outputs from the view model
+    var cancellables: [AnyCancellable] = []
+    outputs.backgroundColor.receive(subscriber: backgroundColorSubscriber)
+    outputs.buttonTitle.receive(subscriber: buttonTitleSubscriber)
+    outputs.cancellable.store(in: &cancellables)
 
+    // Start testing
+    scheduler.resume()
+    XCTAssertEqual(backgroundColorSubscriber.recordedOutput, [
+      (0, .subscription),
+      (0, .input(.red)),
+      (1, .input(.blue)),
+      (2, .input(.purple)),
+      (3, .input(.red)),
+    ])
+    XCTAssertEqual(buttonTitleSubscriber.recordedOutput, [
+      (0, .subscription),
+      (0, .input("Change to blue")),
+      (1, .input("Change to purple")),
+      (2, .input("Change to red")),
+      (3, .input("Change to blue")),
+    ])
+  }
 }

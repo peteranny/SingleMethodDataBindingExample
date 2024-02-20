@@ -7,15 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		721529CD2B84489000DE3677 /* CombineExt in Frameworks */ = {isa = PBXBuildFile; productRef = 721529CC2B84489000DE3677 /* CombineExt */; };
+		721529D02B84489C00DE3677 /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 721529CF2B84489C00DE3677 /* CombineCocoa */; };
+		721529D32B8448A700DE3677 /* CombineDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 721529D22B8448A700DE3677 /* CombineDataSources */; };
+		721529D62B8448B700DE3677 /* Entwine in Frameworks */ = {isa = PBXBuildFile; productRef = 721529D52B8448B700DE3677 /* Entwine */; };
+		721529D82B8448B700DE3677 /* EntwineTest in Frameworks */ = {isa = PBXBuildFile; productRef = 721529D72B8448B700DE3677 /* EntwineTest */; };
+		726F45852B98394A007ED9AD /* ViewModelBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726F45842B98394A007ED9AD /* ViewModelBinding.swift */; };
+		7280F41D2B8446F4004218CB /* SimpleTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7280F41C2B8446F4004218CB /* SimpleTableViewModel.swift */; };
+		7280F41F2B844703004218CB /* SimpleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7280F41E2B844703004218CB /* SimpleTableViewController.swift */; };
 		72E5A2F42B84421400408F42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E5A2F32B84421400408F42 /* AppDelegate.swift */; };
 		72E5A2F62B84421400408F42 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E5A2F52B84421400408F42 /* SceneDelegate.swift */; };
-		72E5A2F82B84421400408F42 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E5A2F72B84421400408F42 /* ViewController.swift */; };
-		72E5A2FB2B84421400408F42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72E5A2F92B84421400408F42 /* Main.storyboard */; };
+		72E5A2F82B84421400408F42 /* SimpleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E5A2F72B84421400408F42 /* SimpleViewController.swift */; };
 		72E5A2FD2B84421900408F42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72E5A2FC2B84421900408F42 /* Assets.xcassets */; };
 		72E5A3002B84421900408F42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72E5A2FE2B84421900408F42 /* LaunchScreen.storyboard */; };
 		72E5A30B2B84421900408F42 /* SimpleProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E5A30A2B84421900408F42 /* SimpleProjectTests.swift */; };
 		72E5A3152B84421900408F42 /* SimpleProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E5A3142B84421900408F42 /* SimpleProjectUITests.swift */; };
 		72E5A3172B84421900408F42 /* SimpleProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E5A3162B84421900408F42 /* SimpleProjectUITestsLaunchTests.swift */; };
+		72E5A3242B84422800408F42 /* SimpleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E5A3232B84422800408F42 /* SimpleViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,11 +44,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		726F45842B98394A007ED9AD /* ViewModelBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBinding.swift; sourceTree = "<group>"; };
+		7280F41C2B8446F4004218CB /* SimpleTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewModel.swift; sourceTree = "<group>"; };
+		7280F41E2B844703004218CB /* SimpleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewController.swift; sourceTree = "<group>"; };
 		72E5A2F02B84421400408F42 /* SimpleProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72E5A2F32B84421400408F42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72E5A2F52B84421400408F42 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		72E5A2F72B84421400408F42 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		72E5A2FA2B84421400408F42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		72E5A2F72B84421400408F42 /* SimpleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleViewController.swift; sourceTree = "<group>"; };
 		72E5A2FC2B84421900408F42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		72E5A2FF2B84421900408F42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		72E5A3012B84421900408F42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +59,7 @@
 		72E5A3102B84421900408F42 /* SimpleProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		72E5A3142B84421900408F42 /* SimpleProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleProjectUITests.swift; sourceTree = "<group>"; };
 		72E5A3162B84421900408F42 /* SimpleProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		72E5A3232B84422800408F42 /* SimpleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +67,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				721529D02B84489C00DE3677 /* CombineCocoa in Frameworks */,
+				721529CD2B84489000DE3677 /* CombineExt in Frameworks */,
+				721529D32B8448A700DE3677 /* CombineDataSources in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				721529D62B8448B700DE3677 /* Entwine in Frameworks */,
+				721529D82B8448B700DE3677 /* EntwineTest in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +92,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7280F41B2B8446EB004218CB /* SimpleTable */ = {
+			isa = PBXGroup;
+			children = (
+				7280F41C2B8446F4004218CB /* SimpleTableViewModel.swift */,
+				7280F41E2B844703004218CB /* SimpleTableViewController.swift */,
+			);
+			path = SimpleTable;
+			sourceTree = "<group>";
+		};
 		72E5A2E72B84421400408F42 = {
 			isa = PBXGroup;
 			children = (
@@ -101,8 +126,10 @@
 			children = (
 				72E5A2F32B84421400408F42 /* AppDelegate.swift */,
 				72E5A2F52B84421400408F42 /* SceneDelegate.swift */,
-				72E5A2F72B84421400408F42 /* ViewController.swift */,
-				72E5A2F92B84421400408F42 /* Main.storyboard */,
+				726F45842B98394A007ED9AD /* ViewModelBinding.swift */,
+				72E5A2F72B84421400408F42 /* SimpleViewController.swift */,
+				72E5A3232B84422800408F42 /* SimpleViewModel.swift */,
+				7280F41B2B8446EB004218CB /* SimpleTable */,
 				72E5A2FC2B84421900408F42 /* Assets.xcassets */,
 				72E5A2FE2B84421900408F42 /* LaunchScreen.storyboard */,
 				72E5A3012B84421900408F42 /* Info.plist */,
@@ -143,6 +170,11 @@
 			dependencies = (
 			);
 			name = SimpleProject;
+			packageProductDependencies = (
+				721529CC2B84489000DE3677 /* CombineExt */,
+				721529CF2B84489C00DE3677 /* CombineCocoa */,
+				721529D22B8448A700DE3677 /* CombineDataSources */,
+			);
 			productName = SimpleProject;
 			productReference = 72E5A2F02B84421400408F42 /* SimpleProject.app */;
 			productType = "com.apple.product-type.application";
@@ -161,6 +193,10 @@
 				72E5A3082B84421900408F42 /* PBXTargetDependency */,
 			);
 			name = SimpleProjectTests;
+			packageProductDependencies = (
+				721529D52B8448B700DE3677 /* Entwine */,
+				721529D72B8448B700DE3677 /* EntwineTest */,
+			);
 			productName = SimpleProjectTests;
 			productReference = 72E5A3062B84421900408F42 /* SimpleProjectTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -215,6 +251,12 @@
 				Base,
 			);
 			mainGroup = 72E5A2E72B84421400408F42;
+			packageReferences = (
+				721529CB2B84489000DE3677 /* XCRemoteSwiftPackageReference "CombineExt" */,
+				721529CE2B84489C00DE3677 /* XCRemoteSwiftPackageReference "CombineCocoa" */,
+				721529D12B8448A700DE3677 /* XCRemoteSwiftPackageReference "CombineDataSources" */,
+				721529D42B8448B700DE3677 /* XCRemoteSwiftPackageReference "Entwine" */,
+			);
 			productRefGroup = 72E5A2F12B84421400408F42 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,7 +275,6 @@
 			files = (
 				72E5A3002B84421900408F42 /* LaunchScreen.storyboard in Resources */,
 				72E5A2FD2B84421900408F42 /* Assets.xcassets in Resources */,
-				72E5A2FB2B84421400408F42 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,8 +299,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72E5A2F82B84421400408F42 /* ViewController.swift in Sources */,
+				72E5A2F82B84421400408F42 /* SimpleViewController.swift in Sources */,
+				726F45852B98394A007ED9AD /* ViewModelBinding.swift in Sources */,
 				72E5A2F42B84421400408F42 /* AppDelegate.swift in Sources */,
+				72E5A3242B84422800408F42 /* SimpleViewModel.swift in Sources */,
+				7280F41F2B844703004218CB /* SimpleTableViewController.swift in Sources */,
+				7280F41D2B8446F4004218CB /* SimpleTableViewModel.swift in Sources */,
 				72E5A2F62B84421400408F42 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,14 +342,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		72E5A2F92B84421400408F42 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				72E5A2FA2B84421400408F42 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		72E5A2FE2B84421900408F42 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -446,7 +483,6 @@
 				INFOPLIST_FILE = SimpleProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -473,7 +509,6 @@
 				INFOPLIST_FILE = SimpleProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -601,6 +636,69 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		721529CB2B84489000DE3677 /* XCRemoteSwiftPackageReference "CombineExt" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CombineCommunity/CombineExt";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.8.1;
+			};
+		};
+		721529CE2B84489C00DE3677 /* XCRemoteSwiftPackageReference "CombineCocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CombineCommunity/CombineCocoa";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.1;
+			};
+		};
+		721529D12B8448A700DE3677 /* XCRemoteSwiftPackageReference "CombineDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CombineCommunity/CombineDataSources";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.5;
+			};
+		};
+		721529D42B8448B700DE3677 /* XCRemoteSwiftPackageReference "Entwine" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tcldr/Entwine";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		721529CC2B84489000DE3677 /* CombineExt */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 721529CB2B84489000DE3677 /* XCRemoteSwiftPackageReference "CombineExt" */;
+			productName = CombineExt;
+		};
+		721529CF2B84489C00DE3677 /* CombineCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 721529CE2B84489C00DE3677 /* XCRemoteSwiftPackageReference "CombineCocoa" */;
+			productName = CombineCocoa;
+		};
+		721529D22B8448A700DE3677 /* CombineDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 721529D12B8448A700DE3677 /* XCRemoteSwiftPackageReference "CombineDataSources" */;
+			productName = CombineDataSources;
+		};
+		721529D52B8448B700DE3677 /* Entwine */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 721529D42B8448B700DE3677 /* XCRemoteSwiftPackageReference "Entwine" */;
+			productName = Entwine;
+		};
+		721529D72B8448B700DE3677 /* EntwineTest */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 721529D42B8448B700DE3677 /* XCRemoteSwiftPackageReference "Entwine" */;
+			productName = EntwineTest;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 72E5A2E82B84421400408F42 /* Project object */;
 }
