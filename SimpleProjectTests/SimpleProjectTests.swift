@@ -5,32 +5,50 @@
 //  Created by Peter Shih on 2024/2/20.
 //
 
-import XCTest
 @testable import SimpleProject
+import RxSwift
+import RxTest
+import XCTest
 
-final class SimpleProjectTests: XCTestCase {
+class SimpleProjectTests: XCTestCase {
+  func test_binding() {
+    let scheduler = TestScheduler(initialClock: .zero)
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+    // Create inputs
+    let buttonTap = scheduler.createColdObservable([
+        .next(1, ()), .next(2, ()), .next(3, ()),
+    ]).asObservable()
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+    // Create output observers
+    let backgroundColorObserver = scheduler.createObserver(SimpleViewModel.Color.self)
+    let buttonTitleObserver = scheduler.createObserver(String.self)
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
+    // Bind the inputs to the view model
+    let viewModel = SimpleViewModel()
+    let inputs = SimpleViewModel.Inputs(
+       buttonTap: buttonTap
+    )
+    let outputs = viewModel.bind(inputs)
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+    // Bind the outputs from the view model
+    let disposeBag = DisposeBag()
+    outputs.backgroundColor.drive(backgroundColorObserver).disposed(by: disposeBag)
+    outputs.buttonTitle.drive(buttonTitleObserver).disposed(by: disposeBag)
+    outputs.disposable.disposed(by: disposeBag)
 
+    // Start testing
+    scheduler.start()
+    XCTAssertEqual(backgroundColorObserver.events, [
+      .next(0, .red),
+      .next(1, .blue),
+      .next(2, .purple),
+      .next(3, .red),
+    ])
+    XCTAssertEqual(buttonTitleObserver.events, [
+      .next(0, "Change to blue"),
+      .next(1, "Change to purple"),
+      .next(2, "Change to red"),
+      .next(3, "Change to blue"),
+    ])
+  }
 }
